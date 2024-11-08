@@ -1,4 +1,5 @@
 import "./App.css";
+import CardDev from "./components/CardDev";
 
 function App() {
   return (
@@ -36,23 +37,12 @@ function App() {
       </nav>
 
       <main className="text-box">
-        <hgroup className="block-primary">
-          <h2 className="block-primary-main">JS Monorepo</h2>
-          <p className="block-primary-sub">Votre framework JavaScript</p>
-        </hgroup>
-        <p>Vous avez lu le README ?</p>
+       
+        <CardDev />
       </main>
 
       <footer>
-        Développé par la&nbsp;
-        <a
-          href="https://www.wildcodeschool.com/"
-          className="wcs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Wild Code School
-        </a>
+       
       </footer>
     </>
   );
