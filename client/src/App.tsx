@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
+import CardDev from "./components/CardDev";
 import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
-import CardDev from "./components/CardDev";
 
 interface Hero {
   id: number;
