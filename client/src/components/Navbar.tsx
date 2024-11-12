@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.logoContent}>
         <img src="images/logo.png" alt="Logo" className={styles.headerLogo} />
-        <h1> HERO-RAP</h1>
+        <h1> HERODEX</h1>
       </div>
       <nav className="navContent">
         <div className="bookmark">

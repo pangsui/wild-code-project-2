@@ -8,12 +8,16 @@ import CardDev from "./components/CardDev";
 
 function App() {
   return (
-    <main className="container">
+    <>  
+    <header className="header">
       <Navbar />
       <Search />
+      </header>
+    <main className="container">
       <Card />
       <CardDev />
     </main>
+    </>
     );
 }
 
