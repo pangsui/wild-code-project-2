@@ -1,7 +1,9 @@
-export default function () {
+import styles from "./ErrorMessage.module.css";
+
+export default function ({ message }: Error) {
   return (
-    <div>
-      <h1>error message here</h1>
+    <div className={styles.error}>
+      <p>⚠️ {message}</p>
     </div>
   );
 }

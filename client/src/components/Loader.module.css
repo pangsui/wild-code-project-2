@@ -1,11 +1,13 @@
 .spinner svg {
-  fill: #f38e82;
-  width: 6rem;
-  height: 6rem;
-  animation: 2s linear infinite rotate;
+  /* fill: #f38e82; */
+  /* width: 6rem;
+  height: 6rem; */
+  /* animation: 2s linear infinite rotate; */
+  position: relative;
+  left: 8rem;
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
   0% {
     transform: rotate(0);
   }
@@ -13,7 +15,7 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 .loading {
   display: flex;
