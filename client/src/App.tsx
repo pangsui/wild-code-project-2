@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import CardDev from "./components/CardDev";
+import ErrorMessage from "./components/ErrorMessage";
 import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
-import ErrorMessage from "./components/ErrorMessage";
 
 //Hero type
 interface Hero {
@@ -44,7 +44,6 @@ function App() {
       if (!response.ok)
         throw new Error("something went wrong! could not fetch data😖");
       const data = await response.json();
-      console.log(data);
 
       setData(data);
       setIsLoading(false);

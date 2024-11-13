@@ -1,19 +1,11 @@
-import { useState } from "react";
 import styles from "./Search.module.css";
 
 export default function Search() {
-  const [querySearch, setQuerySearch] = useState("");
-
-  function handleSearch(event) {
-    setQuerySearch(event.target.value);
-  }
-
   return (
     <>
       <form action="" className={styles.form}>
         <div className={styles.search}>
           <input
-            onChange={(event) => handleSearch(event)}
             type="text"
             className={styles.searchInput}
             placeholder="search over 1,000,000 super heroes"
