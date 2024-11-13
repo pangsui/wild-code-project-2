@@ -3,25 +3,33 @@ import styles from "./Loader.module.css";
 export default function Loading() {
   return (
     <div className={styles.spinner}>
-      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
       <svg
+        aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
         viewBox="0 0 50 50"
-        className="spinner"
+        width="100"
+        height="100"
       >
         <circle
           cx="25"
           cy="25"
           r="20"
-          //   fill="none"
-          stroke="#4f46e5"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeDasharray="31.4 31.4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-dasharray="31.4 31.4"
           transform="rotate(-90 25 25)"
-        />
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 25 25"
+            to="360 25 25"
+            dur="0.5s"
+            repeatCount="indefinite"
+          />
+        </circle>
       </svg>
     </div>
   );

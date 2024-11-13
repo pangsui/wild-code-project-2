@@ -1,9 +1,40 @@
+import CardContent from "./CardContent";
+
+//Hero type
 interface Card {
   onSwitch: () => void;
+};
+interface Hero {
+  id: number;
+  name: string;
+  images: {
+    lg: string;
+    md?: string;
+    sm?: string;
+    xs?: string;
+  };
+  powerstats: {
+    intelligence: number;
+    strength: number;
+    speed: number;
+    durability: number;
+    power: number;
+    combat: number;
+  };
+}
+interface Data {
+  data: Hero[];
 }
 
-function Card({ onSwitch }: Card) {
+function Card({ data }: Data { onSwitch }: Card) {
   return (
+    <section>
+      {data.map((hero) => (
+        <CardContent key={hero.id} data={hero} />
+      ))}
+    </section>
+    
+    
     <div className="Card">
       <img width={50} src="images/herotest.png" alt="hero 1" />
       <h2>HERO NAME</h2>

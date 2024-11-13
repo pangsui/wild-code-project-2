@@ -8,6 +8,7 @@
 }
 
 .header h1 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
   font-family: "Sixtyfour Convergence";
 }
 
