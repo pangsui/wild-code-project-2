@@ -19,7 +19,8 @@ function Footer() {
   }
   return (
     <div className="footer-contener">
-      <div>
+      <div className="firstLineFooter">
+        <img id="logoFooter" src="../src/assets/images/logo.png" alt="logo" />
         <p>© 2024 DevRAP All rights reserved.</p>
       </div>
       <div className="collaborateurs">
