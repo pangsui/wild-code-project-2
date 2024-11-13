@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import "./App.css";
+
 import Card from "./components/Card";
 import CardDev from "./components/CardDev";
 import ErrorMessage from "./components/ErrorMessage";
+import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
@@ -72,7 +74,6 @@ function App() {
         <Search />
       </header>
       <main className="container">
-
         <div className="leftSection">
           {isFirstCard ? 
                 <Card onSwitch={switchToSecondCard} /> :
@@ -87,6 +88,10 @@ function App() {
         </div>
 
       </main>
+      <footer>
+        <Footer />
+      </footer>
+
     </>
   );
 }
