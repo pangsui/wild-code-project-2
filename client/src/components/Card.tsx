@@ -1,12 +1,27 @@
-function Card() {
+interface Card {
+  onSwitch: () => void;
+}
+
+function Card({ onSwitch }: Card) {
   return (
     <div className="Card">
       <img width={50} src="images/herotest.png" alt="hero 1" />
       <h2>HERO NAME</h2>
       <button className="Star" type="button">
-        <img src="images/star.svg" alt="favori" />
+      <svg
+          aria-hidden="true"
+          width="100"
+          height="100"
+          viewBox="0 0 24 24"
+          fill="gold"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
+        </svg>
       </button>
-      <button className="Show" type="button">show</button>
+      <button onClick={onSwitch} className="Show" type="button">
+        show
+      </button>
     </div>
   );
 }
