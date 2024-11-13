@@ -4,16 +4,17 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 5px 5px 5px black;
+  width: 100%;
 }
 
 .header h1 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
   font-family: "Sixtyfour Convergence";
 }
 
 .headerLogo {
   height: 4.6rem;
   margin-left: 1.5rem;
-  transform: rotate(-90deg);
 }
 .logoContent {
   display: flex;
@@ -28,7 +29,7 @@
   height: 40px;
 }
 
-@media (max-width: 430px) {
+@media (min-width: 996px) {
   .logoContent h1 {
     font-size: 1.5rem;
   }
