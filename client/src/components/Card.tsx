@@ -1,13 +1,35 @@
-function Card() {
+import CardContent from "./CardContent";
+
+//Hero type
+interface Hero {
+  id: number;
+  name: string;
+  images: {
+    lg: string;
+    md?: string;
+    sm?: string;
+    xs?: string;
+  };
+  powerstats: {
+    intelligence: number;
+    strength: number;
+    speed: number;
+    durability: number;
+    power: number;
+    combat: number;
+  };
+}
+interface Data {
+  data: Hero[];
+}
+
+function Card({ data }: Data) {
   return (
-    <div className="Card">
-      <img width={50} src="images/herotest.png" alt="hero 1" />
-      <h2>HERO NAME</h2>
-      <button className="Star" type="button">
-        <img src="images/star.svg" alt="favori" />
-      </button>
-      <button className="Show" type="button">show</button>
-    </div>
+    <section>
+      {data.map((hero) => (
+        <CardContent key={hero.id} data={hero} />
+      ))}
+    </section>
   );
 }
 

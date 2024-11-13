@@ -29,8 +29,12 @@ function CardDev() {
           <p>Power : 50</p>
           <p>Combat : 50</p>
         </figcaption>
-        <button id="previous" type="button">Previous</button>
-        <button id="next" type="button">Next</button>
+        <button id="previous" type="button">
+          Previous
+        </button>
+        <button id="next" type="button">
+          Next
+        </button>
       </figure>
     </div>
   );
