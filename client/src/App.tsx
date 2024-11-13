@@ -28,6 +28,14 @@ interface Hero {
 }
 
 function App() {
+  
+  const [isFirstCard, setIsFirstCard] = useState(true);
+  const switchToSecondCard = () => {
+    setIsFirstCard(false);
+  };
+  const switchToFirstCard = () => {
+    setIsFirstCard(true);
+  };
   // Type `data` as `Hero[]` since it holds an array of Hero objects
   const [data, setData] = useState<Hero[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,6 +64,7 @@ function App() {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
   return (
     <>
       <header className="header">
@@ -63,7 +72,12 @@ function App() {
         <Search />
       </header>
       <main className="container">
+
         <div className="leftSection">
+          {isFirstCard ? 
+                <Card onSwitch={switchToSecondCard} /> :
+                <CardDev onBack={switchToFirstCard} />
+            }
           {isLoading && <Loading />}
           {!error && !isLoading && <Card data={data} />}
           {error && <ErrorMessage message={error} name={""} />}
@@ -71,6 +85,7 @@ function App() {
         <div className="rightSection">
           <CardDev />
         </div>
+
       </main>
     </>
   );
