@@ -16,9 +16,9 @@ export default function Loading() {
           r="20"
           fill="none"
           stroke="currentColor"
-          stroke-width="5"
-          stroke-linecap="round"
-          stroke-dasharray="31.4 31.4"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeDasharray="31.4 31.4"
           transform="rotate(-90 25 25)"
         >
           <animateTransform
