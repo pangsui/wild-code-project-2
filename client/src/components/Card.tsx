@@ -8,7 +8,6 @@ function Card({
   data: Hero[];
   setSelectedHero: (hero: Hero) => void;
 }) {
-  // show details when show btn is clicked
   function handleShowDetails(heroID: number) {
     const heroShow = data.find((hero) => hero.id === heroID);
     if (heroShow) {
