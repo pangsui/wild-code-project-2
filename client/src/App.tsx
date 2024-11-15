@@ -42,7 +42,6 @@ function App() {
     fetchData();
   }, [fetchData]);
 
-  // calculate number of pages
   let numPage = 0;
   let currentData = null;
   if (data) {

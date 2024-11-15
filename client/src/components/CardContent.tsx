@@ -1,12 +1,4 @@
-interface Hero {
-  images: {
-    lg: string;
-    md?: string;
-    sm?: string;
-  };
-  name: string;
-  id: number;
-}
+import type { Hero } from "../lib/definition";
 
 export default function CardContent({
   data,

@@ -100,7 +100,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
   @media (min-width: 996px) {
     display: flex;
     justify-content: space-between;
@@ -264,13 +263,6 @@ h5 {
   grid-area: 5 / 3 / 6 / 4;
   margin-left: 0%;
 }
-
-/* .container {
-  padding: 2rem 1.5rem;
-  margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-} */
 .leftSection {
   background: unset;
   padding: unset;
