@@ -1,17 +1,12 @@
-interface Hero {
-  images: Image;
-  name: string;
-}
-interface Image {
-  lg: string;
-  md?: string;
-  sm?: string;
-}
-interface Data {
-  data: Hero;
-}
+import type { Hero } from "../lib/definition";
 
-export default function CardContent({ data }: Data) {
+export default function CardContent({
+  data,
+  handleShowDetails,
+}: {
+  data: Hero;
+  handleShowDetails: (id: number) => void;
+}) {
   return (
     <div className="Card">
       <img width={50} src={data.images.lg} alt={data.name} />
@@ -28,7 +23,11 @@ export default function CardContent({ data }: Data) {
           <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
         </svg>
       </button>
-      <button className="Show" type="button">
+      <button
+        className="Show"
+        type="button"
+        onClick={() => handleShowDetails(data.id)}
+      >
         show
       </button>
     </div>
