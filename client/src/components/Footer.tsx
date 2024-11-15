@@ -21,6 +21,8 @@ function Footer() {
     <div className="footer-contener">
       <div className="firstLineFooter">
         <img id="logoFooter" src="../src/assets/images/logo.png" alt="logo" />
+      </div>
+      <div className="firstLineFooter">
         <p>© 2024 DevRAP All rights reserved.</p>
       </div>
       <div className="collaborateurs">
@@ -39,7 +41,7 @@ function Footer() {
           href={urlArray.alex}
         >
           {" "}
-          Alexandre HIACE
+          Alexandre HIANCE
         </a>{" "}
         <a
           className="collab-ref"

@@ -84,6 +84,7 @@ body {
   max-height: 50vh;
   display: flex;
   justify-content: center;
+  margin-top: -5%;
 }
 
 body {
@@ -128,9 +129,9 @@ img#hero-picture {
   box-shadow: 5px 5px 5px black;
   @media (min-width: 996px) {
     grid-area: 1 / 1 / 1 / 1;
-    width: 150%;
+    width: 120%;
     margin-left: -30%;
-    margin-top: -20%;
+    margin-top: -10%;
   }
 }
 
@@ -318,7 +319,7 @@ h5 {
     font-size: 22px;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: end;
+    align-items: center;
     margin: 35px 0 0 0;
     box-shadow: 0px 0px 25px 100px var(--color1-);
   }
@@ -329,8 +330,8 @@ h5 {
   @media screen and (min-width: 996px) {
     display: block;
     width: 30%;
-    align-content: end;
-    margin-bottom: -10%;
+
+    margin-bottom: 0%;
   }
 }
 
