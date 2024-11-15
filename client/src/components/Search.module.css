@@ -73,3 +73,11 @@
     width: 18rem;
   }
 }
+
+.resultContainer {
+  background-color: white;
+  color: black;
+  padding: 0.8rem;
+  border-style: outset;
+  font-size: 80%;
+}
