@@ -1,6 +1,31 @@
+import { useEffect, useState } from "react";
 import styles from "./Search.module.css";
 
+interface superHero {
+  id: number;
+  name: string;
+  biography: {
+    publisher: string;
+  };
+}
+
 export default function Search() {
+  const [input, setInput] = useState("");
+  const [heroes, setHeroes] = useState<superHero[]>([]);
+  const filteredHeroes = heroes.filter((h) =>
+    h.name.toLowerCase().includes(input.toLowerCase()),
+  );
+
+  const handleChange = (e: string) => {
+    setInput(e);
+  };
+
+  useEffect(() => {
+    fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
+      .then((resp) => resp.json())
+      .then((json) => setHeroes(json));
+  }, []);
+
   return (
     <>
       <form action="" className={styles.form}>
@@ -9,6 +34,8 @@ export default function Search() {
             type="text"
             className={styles.searchInput}
             placeholder="search over 1,000,000 super heroes"
+            onChange={(e) => handleChange(e.target.value)}
+            value={input}
           />
           <button type="button" className={styles.searchButton}>
             <svg
@@ -21,6 +48,19 @@ export default function Search() {
               </g>
             </svg>
           </button>
+          <article>
+            {filteredHeroes.map((h) => {
+              if (input !== "") {
+                return (
+                  <div className={styles.resultContainer}>
+                    <h1>
+                      {h.name} from {h.biography.publisher}
+                    </h1>
+                  </div>
+                );
+              }
+            })}
+          </article>
         </div>
       </form>
     </>
