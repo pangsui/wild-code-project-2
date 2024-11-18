@@ -12,8 +12,10 @@ interface superHero {
 export default function Search() {
   const [input, setInput] = useState("");
   const [heroes, setHeroes] = useState<superHero[]>([]);
-  const filteredHeroes = heroes.filter((h) =>
-    h.name.toLowerCase().includes(input.toLowerCase()),
+  const filteredHeroes = heroes.filter(
+    (h) =>
+      h.name.toLowerCase().includes(input.toLowerCase()) ||
+      h.biography.publisher?.toLowerCase().includes(input.toLowerCase()),
   );
 
   const handleChange = (e: string) => {
