@@ -3,7 +3,10 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 3.5rem;
+  bottom: -2rem;
+  @media (min-width: 996px) {
+    bottom: 3.5rem;
+  }
 }
 
 .searchInput {
@@ -14,9 +17,12 @@
   color: #646464;
   padding: 0.7rem 1rem;
   border-radius: 30px;
-  width: 34rem;
+  width: 75vw;
   transition: all ease-in-out 0.5s;
   margin-right: -2rem;
+  @media (min-width: 996px) {
+    width: 30vw;
+  }
 }
 
 .searchInput:hover,
@@ -53,31 +59,24 @@
   fill: #b4b4b4;
 }
 
-@media (max-width: 1025px) {
-  .searchInput {
-    padding: 0.7rem 1rem;
-    border-radius: 30px;
-    width: 26rem;
-    transition: all ease-in-out 0.5s;
-    margin-right: -2rem;
-  }
-}
-@media (max-width: 915px) {
-  .form {
-    position: relative;
-    bottom: -2rem;
-  }
-}
-@media (max-width: 430px) {
-  .searchInput {
-    width: 18rem;
-  }
-}
-
 .resultContainer {
   background-color: white;
   color: black;
   padding: 0.8rem;
   border-style: outset;
   font-size: 80%;
+  max-width: 75vw;
+  overflow-y: scroll;
+  @media screen and (min-width: 996px) {
+    max-width: 100%;
+  }
+}
+
+article {
+  position: absolute;
+  overflow-y: scroll;
+  max-height: 65vh;
+  @media screen and (min-width: 996px) {
+    max-width: 100%;
+  }
 }
