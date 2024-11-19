@@ -9,32 +9,29 @@ interface superHero {
   };
 }
 
-export default function Search() {
-  const [input, setInput] = useState("");
-  const [heroes, setHeroes] = useState<superHero[]>([]);
-  const filteredHeroes = heroes.filter((h) =>
-    h.name.toLowerCase().includes(input.toLowerCase()),
-  );
+export default function Search({ filteredHeroes, setInput, input }) {
+  // const [input, setInput] = useState("");
+  // const [heroes, setHeroes] = useState<superHero[]>([]);
 
-  const handleChange = (e: string) => {
-    setInput(e);
-  };
+  // const handleChange = (e: string) => {
+  //   setInput(e);
+  // };
 
-  useEffect(() => {
-    fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
-      .then((resp) => resp.json())
-      .then((json) => setHeroes(json));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
+  //     .then((resp) => resp.json())
+  //     .then((json) => setHeroes(json));
+  // }, []);
 
   return (
     <>
-      <form action="" className={styles.form}>
+      <form className={styles.form}>
         <div className={styles.search}>
           <input
             type="text"
             className={styles.searchInput}
             placeholder="search over 1,000,000 super heroes"
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={(e) => setInput(e.target.value)}
             value={input}
           />
           <button type="button" className={styles.searchButton}>
@@ -48,7 +45,7 @@ export default function Search() {
               </g>
             </svg>
           </button>
-          <article>
+          {/* <article>
             {filteredHeroes.map((h) => {
               if (input !== "") {
                 return (
@@ -60,7 +57,7 @@ export default function Search() {
                 );
               }
             })}
-          </article>
+          </article> */}
         </div>
       </form>
     </>

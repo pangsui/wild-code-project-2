@@ -1,5 +1,7 @@
 .header {
-  background-color: #1c1f4a;
+  /* background-color: #1c1f4a; */
+  background-color: #1c1f4ab0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +24,7 @@
   justify-content: center;
 }
 
-.bookmarkIcon {
+.bookmark {
   position: relative;
   right: 3rem;
   width: 40px;

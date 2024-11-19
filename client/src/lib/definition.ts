@@ -8,6 +8,7 @@ export type Hero = {
   name: string;
   length: number;
   biography: {
+    publisher: string;
     fullName: string;
     aliases: [0];
   };
