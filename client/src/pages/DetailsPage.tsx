@@ -17,11 +17,14 @@ export default function DetailsPage() {
   const BASE_URL = "https://akabab.github.io/superhero-api/api/";
   const query = "all.json";
 
-  const filteredHeroes = data.filter(
-    (hero) =>
-      hero.biography.publisher?.toLowerCase().includes(input.toLowerCase()) ||
-      hero.name.toLowerCase().includes(input.toLowerCase())
-  );
+  const filteredHeroes = data.filter((hero) => {
+    const publisher = hero.biography.publisher
+      ?.toLowerCase()
+      .includes(input.toLowerCase());
+    const allSearch = hero.name.toLowerCase().includes(input.toLowerCase());
+
+    return publisher || allSearch;
+  });
 
   useEffect(() => {
     const fetchData = async () => {
