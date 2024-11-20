@@ -16,6 +16,20 @@ body {
   color: #eee;
   margin: 0;
   background-color: #2e2e2e;
+  background-image: url("images/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 30% opacity */
+  z-index: -1; /* Make sure the overlay stays behind the content */
 }
 
 /* Card horizontal */
@@ -279,8 +293,14 @@ h5 {
     grid-template-columns: 2fr 4fr;
   }
   .NoSuperHero {
-    font-size: 1.5rem;
+    font-size: 18px;
+    position: relative;
+    bottom: 5rem;
+
     text-align: center;
+  }
+  .heroSearch {
+    font-size: 18px;
   }
   .leftSection {
     background: #575454;

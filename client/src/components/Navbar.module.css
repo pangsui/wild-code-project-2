@@ -1,5 +1,6 @@
 .header {
-  background-color: #1c1f4a;
+  background-color: #1c1f4ab0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,8 +11,7 @@
 }
 
 .header h1 {
-  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
-  font-family: "Sixtyfour Convergence";
+  font-family: "Sixtyfour Convergence", sans-serif;
 }
 
 .headerLogo {
@@ -24,11 +24,34 @@
   justify-content: center;
 }
 
-.bookmarkIcon {
+.bookmark {
   position: relative;
   right: 3rem;
   width: 40px;
   height: 40px;
+}
+.allSections {
+  margin: 0 15rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  margin-top: 2rem;
+}
+.link {
+  text-decoration: none;
+  background: #1c1f4a;
+  text-align: center;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 22px;
+  border-radius: 10px;
+}
+.link:hover {
+  opacity: 0.8;
+  color: #1c1f4a;
+  background: #fff;
 }
 
 @media (min-width: 996px) {
