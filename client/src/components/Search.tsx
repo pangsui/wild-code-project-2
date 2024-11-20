@@ -9,9 +9,14 @@ interface superHero {
   };
 }
 
-export default function Search({ filteredHeroes, setInput, input }) {
-  // const [input, setInput] = useState("");
-  // const [heroes, setHeroes] = useState<superHero[]>([]);
+export default function Search() {
+  const [input, setInput] = useState("");
+  const [heroes, setHeroes] = useState<superHero[]>([]);
+  const filteredHeroes = heroes.filter(
+    (h) =>
+      h.name.toLowerCase().includes(input.toLowerCase()) ||
+      h.biography.publisher?.toLowerCase().includes(input.toLowerCase()),
+  );
 
   // const handleChange = (e: string) => {
   //   setInput(e);
@@ -45,7 +50,10 @@ export default function Search({ filteredHeroes, setInput, input }) {
               </g>
             </svg>
           </button>
-          {/* <article>
+
+          {/* 
+          <article className={styles.overlay}>
+
             {filteredHeroes.map((h) => {
               if (input !== "") {
                 return (
