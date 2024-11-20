@@ -50,7 +50,7 @@ export default function Search() {
               </g>
             </svg>
           </button>
-          <article>
+          <article className={styles.overlay}>
             {filteredHeroes.map((h) => {
               if (input !== "") {
                 return (
