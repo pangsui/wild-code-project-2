@@ -54,45 +54,59 @@ function Footer() {
           </a>
         </div>
         <div className="social-media">
-          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <img
             src="../src/assets/logo/linkedin.svg"
             alt="linkedin"
             width="15%"
-            onClick={() => {
-              return handleClick(urlArray.linkedin);
+            onClick={() => handleClick(urlArray.linkedin)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClick(urlArray.linkedin);
+              }
             }}
           />
-          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <img
             src="../src/assets/logo/github.svg"
             alt="github"
             width="15%"
-            onClick={() => {
-              handleClick(urlArray.github);
+            onClick={() => handleClick(urlArray.github)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClick(urlArray.github);
+              }
             }}
-          />{" "}
-          {}
-          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+          />
           <img
             src="../src/assets/logo/React.svg"
             alt="react"
             onClick={() => handleClick(urlArray.react)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClick(urlArray.react);
+              }
+            }}
           />
-          {}
-          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <img
             src="../src/assets/logo/css3.svg"
             alt="CSS"
             width="15%"
             onClick={() => handleClick(urlArray.css3)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClick(urlArray.css3);
+              }
+            }}
           />
-          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <img
             src="../src/assets/logo/html-5.svg"
             alt="html"
             width="15%"
             onClick={() => handleClick(urlArray.html5)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClick(urlArray.html5);
+              }
+            }}
           />
         </div>
       </div>

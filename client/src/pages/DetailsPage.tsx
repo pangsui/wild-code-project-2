@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Search from "../components/Search";
-import Loading from "../components/Loading";
 import Card from "../components/Card";
-import ErrorMessage from "../components/ErrorMessage";
 import CardDev from "../components/CardDev";
+import ErrorMessage from "../components/ErrorMessage";
+import Loading from "../components/Loading";
+import Search from "../components/Search";
 import type { Hero } from "../lib/definition";
 
 export default function DetailsPage() {
@@ -19,8 +19,8 @@ export default function DetailsPage() {
 
   const filteredHeroes = data.filter(
     (hero) =>
-      hero.name.toLowerCase().includes(input.toLowerCase()) ||
-      hero.biography.publisher?.toLowerCase().includes(input.toLowerCase())
+      hero.biography.publisher?.toLowerCase().includes(input.toLowerCase()) ||
+      hero.name.toLowerCase().includes(input.toLowerCase())
   );
 
   useEffect(() => {
@@ -48,11 +48,8 @@ export default function DetailsPage() {
     setPage(1);
   }, [input]);
 
-  // let currentData = null;
-
-  const numPage = Math.ceil(data.length / 10);
-
   const resultsPerPage = 6;
+  const numPage = Math.ceil(data.length / resultsPerPage);
   const start = (page - 1) * resultsPerPage;
   const end = page * resultsPerPage;
   const currentData = filteredHeroes.slice(start, end);
@@ -68,11 +65,7 @@ export default function DetailsPage() {
   return (
     <>
       <header className="header">
-        <Search
-          filteredHeroes={filteredHeroes}
-          setInput={setInput}
-          input={input}
-        />
+        <Search setInput={setInput} input={input} />
       </header>
       <main className="container">
         <div className="leftSection">

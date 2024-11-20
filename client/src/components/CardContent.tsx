@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Hero } from "../lib/definition";
 
 export default function CardContent({
@@ -13,7 +12,6 @@ export default function CardContent({
       <img width={50} src={data.images.lg} alt={data.name} />
       <h2>{data.name}</h2>
       <button className="Star" type="button">
-        {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <svg
           aria-hidden="true"
           width="100"

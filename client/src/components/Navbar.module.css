@@ -1,5 +1,4 @@
 .header {
-  /* background-color: #1c1f4a; */
   background-color: #1c1f4ab0;
 
   display: flex;
@@ -10,8 +9,7 @@
 }
 
 .header h1 {
-  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
-  font-family: "Sixtyfour Convergence";
+  font-family: "Sixtyfour Convergence", sans-serif;
 }
 
 .headerLogo {

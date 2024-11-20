@@ -10,7 +10,6 @@
   display: inline-block;
   animation: typing 4s steps(40) 1s 1 normal both,
     blink-caret 0.75s step-end infinite, hide-caret 4s steps(40) 1 normal both;
-  /* background: #1c1f4a; */
 }
 @keyframes typing {
   from {
