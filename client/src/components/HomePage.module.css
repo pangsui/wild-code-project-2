@@ -40,26 +40,3 @@
   color: oldlace;
   font-weight: bold;
 }
-.allSections {
-  margin: 0 15rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
-  margin-top: 2rem;
-}
-.link {
-  text-decoration: none;
-  background: #1c1f4a;
-  text-align: center;
-  color: #fff;
-  padding: 0.5rem;
-  font-size: 22px;
-  border-radius: 10px;
-}
-.link:hover {
-  opacity: 0.8;
-  color: #1c1f4a;
-  background: #fff;
-}

@@ -17,17 +17,6 @@ export default function HomePage() {
         favoris, à découvrir des événements épiques et à vous immerger dans un
         univers aux possibilités infinies !
       </p>
-      <div className={styles.allSections}>
-        <NavLink to="/details" className={styles.link}>
-          Explore heroes!
-        </NavLink>
-        <NavLink to="/allHeroes" className={styles.link}>
-          All super heroes
-        </NavLink>
-        <NavLink to="/fevorites" className={styles.link}>
-          Fevorites
-        </NavLink>
-      </div>
     </section>
   );
 }

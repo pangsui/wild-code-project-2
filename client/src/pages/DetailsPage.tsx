@@ -87,7 +87,7 @@ export default function DetailsPage() {
                       className="btnFirst"
                       onClick={handlePrev}
                     >
-                      Go to page {page - 1}
+                      &larr;
                     </button>
                   )}
                   {page < numPage && (
@@ -96,7 +96,7 @@ export default function DetailsPage() {
                       className="btnSecond"
                       onClick={handleNext}
                     >
-                      Go to page {page + 1}
+                      &rarr;
                     </button>
                   )}
                 </div>
