@@ -10,20 +10,22 @@ export default function Navbar() {
         </NavLink>
         <NavLink to="/">
           {" "}
-          <h1> HERODEX</h1>
+          <h1 className={styles.h1navbar}> HERODEX</h1>
         </NavLink>
+      </div>
+      <nav className={styles.navContent}>
         <div className={styles.allSections}>
           <NavLink to="/details" className={styles.link}>
             Explore heroes!
           </NavLink>
           <NavLink to="/allHeroes" className={styles.link}>
-            All super heroes
+            All heroes
           </NavLink>
-          <NavLink to="/fevorites" className={styles.link}>
-            Fevorites
+          <NavLink to="/favorites" className={styles.link}>
+            Favorites
           </NavLink>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

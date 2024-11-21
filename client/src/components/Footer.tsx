@@ -1,15 +1,6 @@
 import datas from "../datas/datas.json";
-
-interface Urls {
-  raph: string;
-  alex: string;
-  pangsui: string;
-  linkedin: string;
-  github: string;
-  react: string;
-  html5: string;
-  css3: string;
-}
+import styles from "./Footer.module.css"
+import type { Urls } from "../lib/definition";
 
 function Footer() {
   const urlArray: Urls = datas;
@@ -19,16 +10,16 @@ function Footer() {
   }
   return (
     <footer>
-      <div className="footer-contener">
-        <div className="firstLineFooter">
-          <img id="logoFooter" src="../src/assets/images/logo.png" alt="logo" />
+      <div className={styles.footerContener}>
+        <div className={styles.firstLineFooter}>
+          <img id={styles.logoFooter} src="images/logo.png" alt="logo" />
         </div>
-        <div className="firstLineFooter">
+        <div className={styles.firstLineFooter}>
           <p>© 2024 DevRAP All rights reserved.</p>
         </div>
-        <div className="collaborateurs">
+        <div className={styles.collaborateurs}>
           <a
-            className="collab-ref"
+            className={styles.collabRef}
             target="_blank"
             rel="noopener noreferrer"
             href={urlArray.raph}
@@ -36,7 +27,7 @@ function Footer() {
             Raphaël RIVIERE
           </a>{" "}
           <a
-            className="collab-ref"
+            className={styles.collabRef}
             target="_blank"
             rel="noopener noreferrer"
             href={urlArray.alex}
@@ -45,7 +36,7 @@ function Footer() {
             Alexandre HIANCE
           </a>{" "}
           <a
-            className="collab-ref"
+            className={styles.collabRef}
             target="_blank"
             rel="noopener noreferrer"
             href={urlArray.pangsui}
@@ -53,7 +44,7 @@ function Footer() {
             Pangsui LINGE USIFU{" "}
           </a>
         </div>
-        <div className="social-media">
+        <div className={styles.socialMedia}>
           <img
             src="../src/assets/logo/linkedin.svg"
             alt="linkedin"
