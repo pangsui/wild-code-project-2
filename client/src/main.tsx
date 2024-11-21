@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <AllHeroesPage />,
       },
       {
-        path: "/fevorites",
+        path: "/favorites",
         element: <FavouritesHeroespage />,
       },
     ],
