@@ -3,17 +3,19 @@
   box-shadow: 5px 5px 5px black;
   display: flex;
   flex-direction: column;
-
   height: 14vh;
   justify-content: end;
   align-items: center;
   font-size: 13px;
   text-align: end;
   margin: -25px 0 8px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   @media screen and (min-width: 996px) {
     font-size: 22px;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin: 35px 0 0 0;
   }

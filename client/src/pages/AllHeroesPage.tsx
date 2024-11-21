@@ -1,41 +1,41 @@
 import { useEffect, useState } from "react";
+import ErrorMessage from "../components/ErrorMessage";
+import Loading from "../components/Loading";
 import type { Hero } from "../lib/definition";
 import styles from "./AllHeroesPages.module.css";
-import Loading from "../components/Loading";
-import ErrorMessage from "../components/ErrorMessage";
-
 
 export default function AllHeroesPage() {
-	const [data, setData] = useState<Hero[]>([]);
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState("");
-	const BASE_URL = "https://akabab.github.io/superhero-api/api/";
-	const query = "all.json";
-	useEffect(() => {
-		const fetchData = async () => {
-			setIsLoading(true);
-			try {
-				const response = await fetch(`${BASE_URL}${query}`);
-				if (!response.ok)
-					throw new Error("something went wrong! could not fetch data😖");
-				const heroes = await response.json();
+  const [data, setData] = useState<Hero[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const BASE_URL = "https://akabab.github.io/superhero-api/api/";
+  const query = "all.json";
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`${BASE_URL}${query}`);
+        if (!response.ok)
+          throw new Error("something went wrong! could not fetch data😖");
+        const heroes = await response.json();
 
-				setData(heroes);
+        setData(heroes);
 
-				setIsLoading(false);
-			} catch (err) {
-				console.error((err as Error).message);
-				setError((err as Error).message);
-			}
-		};
-		fetchData();
-	}, []);
+        setIsLoading(false);
+      } catch (err) {
+        console.error((err as Error).message);
+        setError((err as Error).message);
+      }
+    };
+    fetchData();
+  }, []);
   return (
-
-      <section className={styles.card}>
-        {!isLoading &&
+    <section className={styles.card}>
+      {isLoading && <Loading />}
+      {!isLoading &&
+        !error &&
         data.map((data) => (
-          <div className= {styles.childrenCard} key={data.id}>
+          <div className={styles.childrenCard} key={data.id}>
             <img width={50} src={data.images.lg} alt={data.name} />
             <h2>{data.name}</h2>
             <button className={styles.star} type="button">
@@ -52,6 +52,7 @@ export default function AllHeroesPage() {
             </button>
           </div>
         ))}
-      </section>
+      {error && <ErrorMessage message={error} name={""} />}
+    </section>
   );
 }

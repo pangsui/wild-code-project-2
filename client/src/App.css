@@ -13,7 +13,6 @@
 body {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 16px;
-  line-height: 1.7;
   color: #eee;
   margin: 0;
   background-color: #2e2e2e;
@@ -34,12 +33,12 @@ body::before {
   z-index: -1; /* Make sure the overlay stays behind the content */
 }
 
-.leftSection {
-  background: unset;
-  padding: unset;
-}
-
 /*media query version desktop*/
+.heroSearch {
+  font-size: 15px;
+  margin-top: 3rem;
+  text-align: center;
+}
 
 @media (min-width: 996px) {
   .container {
@@ -59,20 +58,27 @@ body::before {
     font-size: 18px;
   }
   .leftSection {
-    background: #575454;
-    padding: 1rem 2rem 1rem 0.5rem;
+    padding: 1rem 2rem 3rem 0.5rem;
     margin-bottom: 4rem;
     margin-top: -6.5rem;
+    height: 100%;
   }
+
   .btnLeft {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    gap: 5rem;
   }
+
   .btnFirst,
   .btnSecond {
     padding: 0.5rem 2rem;
+    margin-top: 1em;
+    background: none;
     font-size: 1rem;
     border: none;
-    border-radius: 3rem;
+    scale: 3;
+    color: white;
   }
 }
