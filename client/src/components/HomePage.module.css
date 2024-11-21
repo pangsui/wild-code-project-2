@@ -1,15 +1,28 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
 .homePage h1 {
+  width: 100vw;
+  max-height: 30vh;
   text-align: center;
-  margin: 4rem 0 0 4rem;
+  margin: 0.4rem 0.2rem 0 0.2rem;
   opacity: 0.9;
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 48px;
+  font-size: 35px;
   color: #eee;
   overflow: hidden; /* Hide text that is not yet displayed */
-  white-space: nowrap;
   display: inline-block;
-  animation: typing 4s steps(40) 1s 1 normal both,
+  animation:
+    typing 4s steps(40) 1s 1 normal both,
     blink-caret 0.75s step-end infinite, hide-caret 4s steps(40) 1 normal both;
+  @media screen and (min-width: 996px) {
+    margin: 4rem 0 0 4rem;
+    font-size: 48px;
+    white-space: nowrap;
+  }
 }
 @keyframes typing {
   from {
@@ -34,7 +47,8 @@
 
 .homePage p {
   text-align: center;
-  margin: 0 6rem;
+  margin: 2rem;
+
   font-size: 20px;
   /* color: #fdfdff; */
   color: oldlace;

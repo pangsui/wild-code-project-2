@@ -1,31 +1,35 @@
 import { useEffect, useState } from "react";
 import type { Hero } from "../lib/definition";
 import styles from "./AllHeroesPages.module.css";
+import Loading from "../components/Loading";
+import ErrorMessage from "../components/ErrorMessage";
+
 
 export default function AllHeroesPage() {
-  const [data, setData] = useState<Hero[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const BASE_URL = "https://akabab.github.io/superhero-api/api/";
-  const query = "all.json";
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch(`${BASE_URL}${query}`);
-        if (!response.ok)
-          throw new Error("something went wrong! could not fetch data😖");
-        const heroes = await response.json();
+	const [data, setData] = useState<Hero[]>([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState("");
+	const BASE_URL = "https://akabab.github.io/superhero-api/api/";
+	const query = "all.json";
+	useEffect(() => {
+		const fetchData = async () => {
+			setIsLoading(true);
+			try {
+				const response = await fetch(`${BASE_URL}${query}`);
+				if (!response.ok)
+					throw new Error("something went wrong! could not fetch data😖");
+				const heroes = await response.json();
 
-        setData(heroes);
+				setData(heroes);
 
-        setIsLoading(false);
-      } catch (err) {
-        console.error((err as Error).message);
-      }
-    };
-    fetchData();
-  }, []);
-
+				setIsLoading(false);
+			} catch (err) {
+				console.error((err as Error).message);
+				setError((err as Error).message);
+			}
+		};
+		fetchData();
+	}, []);
   return (
 
       <section className={styles.card}>

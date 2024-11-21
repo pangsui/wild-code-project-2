@@ -57,15 +57,14 @@ function CardDev({ selectedHero }: { selectedHero: Hero }) {
           </button>
         </figure>
       )}
-
-      {selectedHero.length === 0 && (
-        <p className="NoSuperHero">
-          Start by searching for a superhero or by clicking on any superhero
-          from the list on the left. Enjoy exploring 😇!
-        </p>
-      )}
-    </div>
-  );
+			{selectedHero.length === 0 && (
+				<p className="NoSuperHero">
+					Start by searching for a superhero or by clicking on any superhero
+					from the list on the left. Enjoy exploring 😇!
+				</p>
+			)}
+		</div>
+	);
 }
 
 export default CardDev;
