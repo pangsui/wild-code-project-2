@@ -20,7 +20,6 @@ export default function Search({
             onChange={(e) => setInput(e.target.value)}
             value={input}
           />
-
           <svg
             className={styles.searchIcon}
             aria-hidden="true"
