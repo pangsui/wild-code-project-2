@@ -24,6 +24,7 @@ function CardDev({ selectedHero }: { selectedHero: Hero }) {
             </svg>
           </button>
           <button
+
             className={styles.cardbutton}
             type="button"
             aria-label="Fermer cette carte"
