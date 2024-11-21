@@ -1,4 +1,5 @@
 import type { Hero } from "../lib/definition";
+import styles from "./CardContent.module.css";
 
 export default function CardContent({
   data,
@@ -8,10 +9,10 @@ export default function CardContent({
   handleShowDetails: (id: number) => void;
 }) {
   return (
-    <div className="Card">
+    <div className={styles.card}>
       <img width={50} src={data.images.lg} alt={data.name} />
       <h2>{data.name}</h2>
-      <button className="Star" type="button">
+      <button className={styles.star} type="button">
         <svg
           aria-hidden="true"
           width="100"
@@ -24,7 +25,7 @@ export default function CardContent({
         </svg>
       </button>
       <button
-        className="Show"
+        className={styles.show}
         type="button"
         onClick={() => handleShowDetails(data.id)}
       >

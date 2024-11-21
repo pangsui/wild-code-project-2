@@ -26,4 +26,16 @@ export type Hero = {
     speed: number;
     strength: number;
   };
+
+};
+
+export type Urls = {
+  raph: string;
+  alex: string;
+  pangsui: string;
+  linkedin: string;
+  github: string;
+  react: string;
+  html5: string;
+  css3: string;
 };
