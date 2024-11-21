@@ -13,7 +13,6 @@ export default function Navbar() {
           <h1 className={styles.h1navbar}> HERODEX</h1>
         </NavLink>
       </div>
-
       <nav className={styles.navContent}>
         <div className={styles.allSections}>
           <NavLink to="/details" className={styles.link}>
