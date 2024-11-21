@@ -8,7 +8,8 @@
   overflow: hidden; /* Hide text that is not yet displayed */
   white-space: nowrap;
   display: inline-block;
-  animation: typing 4s steps(40) 1s 1 normal both,
+  animation:
+    typing 4s steps(40) 1s 1 normal both,
     blink-caret 0.75s step-end infinite, hide-caret 4s steps(40) 1 normal both;
 }
 @keyframes typing {
