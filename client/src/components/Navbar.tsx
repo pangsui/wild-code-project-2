@@ -10,7 +10,7 @@ export default function Navbar() {
         </NavLink>
         <NavLink to="/">
           {" "}
-          <h1> HERODEX</h1>
+          <h1 className={styles.h1navbar}> HERODEX</h1>
         </NavLink>
       </div>
 
@@ -20,24 +20,11 @@ export default function Navbar() {
             Explore heroes!
           </NavLink>
           <NavLink to="/allHeroes" className={styles.link}>
-            All super heroes
+            All heroes
           </NavLink>
           <NavLink to="/favorites" className={styles.link}>
             Favorites
           </NavLink>
-        </div>
-        <div className={styles.bookmarkContainer}>
-          <button type="button" className={styles.bookmark}>
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              fill="currentColor"
-            >
-              <path d="M6 2c-1.1 0-2 .9-2 2v18l8-4 8 4V4c0-1.1-.9-2-2-2H6zm0 2h12v15.17l-6-3-6 3V4z" />
-            </svg>
-          </button>
         </div>
       </nav>
     </header>
