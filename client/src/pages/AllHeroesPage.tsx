@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Hero } from "../lib/definition";
+import styles from "./AllHeroesPages.module.css";
 
 export default function AllHeroesPage() {
   const [data, setData] = useState<Hero[]>([]);
@@ -26,13 +27,14 @@ export default function AllHeroesPage() {
   }, []);
 
   return (
-    <section className="Card">
-      {!isLoading &&
+
+      <section className={styles.card}>
+        {!isLoading &&
         data.map((data) => (
-          <div key={data.id}>
+          <div className= {styles.childrenCard} key={data.id}>
             <img width={50} src={data.images.lg} alt={data.name} />
             <h2>{data.name}</h2>
-            <button className="Star" type="button">
+            <button className={styles.star} type="button">
               <svg
                 aria-hidden="true"
                 width="100"
@@ -46,6 +48,6 @@ export default function AllHeroesPage() {
             </button>
           </div>
         ))}
-    </section>
+      </section>
   );
 }

@@ -1,16 +1,17 @@
 import type { Hero } from "../lib/definition";
+import styles from "./CardDev.module.css";
 
 function CardDev({ selectedHero }: { selectedHero: Hero }) {
   return (
-    <div className="card-contener">
+    <div className={styles.cardcontener}>
       {selectedHero.length !== 0 && (
-        <figure className="card">
+        <figure className={styles.card}>
           <img
-            id="hero-picture"
+            id={styles.heropicture}
             alt={selectedHero.name}
             src={selectedHero?.images?.lg}
           />
-          <button id="star1" type="button">
+          <button id={styles.star1} type="button">
             <svg
               aria-hidden="true"
               width="100"
@@ -23,24 +24,24 @@ function CardDev({ selectedHero }: { selectedHero: Hero }) {
             </svg>
           </button>
           <button
-            className="card-btn"
+            className={styles.cardbutton}
             type="button"
             aria-label="Fermer cette carte"
           >
             <i className="fa-solid fa-xmark" />
           </button>
-          <div className="title-alias">
+          <div className={styles.titlealias}>
             <h3> {selectedHero?.biography?.fullName} </h3>
             <h4>@Aliase {selectedHero?.biography?.aliases[0]}</h4>
           </div>
-          <figcaption id="hero-information">
+          <figcaption id={styles.heroinfo}>
             <p>Gender : {selectedHero?.appearance?.gender}</p>
             <p>Race : {selectedHero?.appearance?.race}</p>
             <p>Height : {selectedHero?.appearance?.height[1]}</p>
             <p>Weight : {selectedHero?.appearance?.weight[1]}</p>
           </figcaption>
           <h5>Powerstat</h5>
-          <figcaption id="powerstat">
+          <figcaption id={styles.powerstat}>
             <p>Intelligence : {selectedHero?.powerstats?.intelligence}</p>
             <p>Strength :{selectedHero?.powerstats?.strength} </p>
             <p>Speed : {selectedHero?.powerstats?.speed}</p>
@@ -48,10 +49,10 @@ function CardDev({ selectedHero }: { selectedHero: Hero }) {
             <p>Power : {selectedHero?.powerstats?.power}</p>
             <p>Combat : {selectedHero?.powerstats?.combat}</p>
           </figcaption>
-          <button id="previous" type="button">
+          <button id={styles.previous} type="button">
             Previous
           </button>
-          <button id="next" type="button">
+          <button id={styles.next} type="button">
             Next
           </button>
         </figure>
