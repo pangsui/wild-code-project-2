@@ -1,6 +1,6 @@
 import datas from "../datas/datas.json";
-import styles from "./Footer.module.css"
 import type { Urls } from "../lib/definition";
+import styles from "./Footer.module.css";
 
 function Footer() {
   const urlArray: Urls = datas;

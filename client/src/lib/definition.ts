@@ -26,7 +26,6 @@ export type Hero = {
     speed: number;
     strength: number;
   };
-
 };
 
 export type Urls = {

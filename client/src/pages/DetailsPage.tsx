@@ -51,7 +51,7 @@ export default function DetailsPage() {
     setPage(1);
   }, [input]);
 
-  const resultsPerPage = 6;
+  const resultsPerPage = 10;
   const numPage = Math.ceil(data.length / resultsPerPage);
   const start = (page - 1) * resultsPerPage;
   const end = page * resultsPerPage;
@@ -113,7 +113,7 @@ export default function DetailsPage() {
           )}
         </div>
 
-        {currentData?.length > 0 ? (
+        {currentData?.length > 0 && (
           <div className="rightSection">
             {selectedHero ? (
               <CardDev selectedHero={selectedHero} />
@@ -124,8 +124,6 @@ export default function DetailsPage() {
               </p>
             )}
           </div>
-        ) : (
-          <p className="NoSuperHero">No supper hero selected</p>
         )}
       </main>
     </>
