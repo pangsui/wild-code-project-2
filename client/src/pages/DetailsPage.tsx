@@ -51,7 +51,7 @@ export default function DetailsPage() {
     setPage(1);
   }, [input]);
 
-  const resultsPerPage = 10;
+  const resultsPerPage = 8;
   const numPage = Math.ceil(data.length / resultsPerPage);
   const start = (page - 1) * resultsPerPage;
   const end = page * resultsPerPage;
