@@ -24,11 +24,12 @@
       typing 4s steps(40) 1s 1 normal both,
       blink-caret 0.75s step-end, hide-caret 4s steps(40) 1 normal both;
     margin: 4rem 0 0 0;
-    line-height: 5;
+    line-height: 3;
     font-size: 55px;
     white-space: nowrap;
   }
 }
+
 @keyframes typing {
   from {
     width: 0;

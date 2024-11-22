@@ -1,5 +1,5 @@
 .footerContener {
-  background-color: #1c1f4ab0;
+  background-color: #1c1f4a;
   box-shadow: 5px 5px 5px black;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   font-size: 13px;
   text-align: end;
   margin: -25px 0 8px 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   @media screen and (min-width: 996px) {
