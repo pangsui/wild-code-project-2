@@ -16,13 +16,13 @@ export default function Navbar() {
       <nav className={styles.navContent}>
         <div className={styles.allSections}>
           <NavLink to="/details" className={styles.link}>
-            Explore heroes!
+            EXPLORE
           </NavLink>
           <NavLink to="/allHeroes" className={styles.link}>
-            All heroes
+            ALL STARS
           </NavLink>
           <NavLink to="/favorites" className={styles.link}>
-            Favorites
+            FAVORITE
           </NavLink>
         </div>
       </nav>
