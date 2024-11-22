@@ -8,6 +8,7 @@
   --color4-: #3a3a3a;
   --color5-: #7b1113;
   --color6-: #cba921;
+  text-decoration: none;
 }
 
 body {
@@ -38,6 +39,10 @@ body::before {
   font-size: 15px;
   margin-top: 3rem;
   text-align: center;
+}
+
+.btnLeft {
+  display: none;
 }
 
 @media (min-width: 996px) {

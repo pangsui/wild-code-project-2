@@ -1,9 +1,15 @@
 .cardcontener {
-  width: 100%;
-  max-height: 50vh;
+  margin-bottom: 10rem;
   display: flex;
   justify-content: center;
-  margin-top: -5%;
+  @media (min-width: 996px) {
+    margin-top: 2%;
+    margin-right: -5%;
+    width: 100%;
+    max-height: 50vh;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .contener {
@@ -29,6 +35,7 @@ figure.card {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 20% 40% 40%;
+    width: 52%;
   }
 }
 
@@ -48,8 +55,8 @@ img#heropicture {
 
 #star1 {
   grid-area: 1 / 2 / 1 / 2;
-  margin-top: 20%;
-  margin-left: 50%;
+  margin-top: 10%;
+  margin-left: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,8 +65,8 @@ img#heropicture {
   width: 35px;
   height: 35px;
   @media (min-width: 996px) {
-    margin-top: 3%;
-    margin-left: 30%;
+    margin-top: 4%;
+    margin-left: -2%;
   }
 }
 
@@ -70,6 +77,7 @@ img#heropicture {
 
 .cardbutton {
   cursor: pointer;
+  color: rgb(227, 227, 227);
   border: none;
   background: transparent;
   font-size: 1.5rem;
@@ -84,20 +92,22 @@ img#heropicture {
 }
 
 .cardbutton:hover {
-  color: rgb(227, 227, 227);
+  color: rgb(5, 5, 5);
 }
 
 .titlealias {
   grid-template-areas: 2 / 2 / 3 / 4;
-  margin-left: 120%;
-  margin-top: -15%;
+  margin-left: 130%;
+  margin-top: -10%;
   width: 130%;
   display: flex;
   flex-direction: column;
   text-decoration: solid;
   text-shadow: 5px 5px 5px black;
   @media (min-width: 996px) {
-    margin-left: 130%;
+    margin-left: 100%;
+    margin-top: -10%;
+    font-size: x-large;
   }
 }
 
@@ -108,71 +118,50 @@ h3 {
 }
 
 h4 {
-  font-size: 90%;
+  font-size: 100%;
   text-align: left;
 }
 
 p {
-  font-size: 80%;
+  font-size: 100%;
 }
 
 #heroinfo {
   grid-area: 4 / 1 / 5 / 2;
-  margin-top: -5%;
+  margin-top: 10%;
   text-align: left;
-  margin-left: 33%;
+  margin-left: 20%;
+  line-height: 1.5;
   @media (min-width: 996px) {
     margin: 0;
     grid-area: 2 / 2 / 2 / 2;
-    margin-left: 35%;
-    margin-top: 10%;
+    margin-top: 12%;
   }
 }
 
 h5 {
   grid-area: 3 / 2 / 4 / 4;
   margin-top: -5%;
-  font-size: 90%;
+  font-size: 100%;
   text-align: left;
-  margin-left: 33%;
+  margin-left: 20%;
   text-shadow: 5px 5px 5px black;
   @media (min-width: 996px) {
-    margin-top: -15%;
+    margin-top: -10%;
+    font-size: x-large;
+    margin-left: 0%;
   }
 }
 
 #powerstat {
   grid-area: 4 / 3 / 5 / 4;
   margin-top: -34%;
+  margin-left: -20%;
   text-align: left;
+  line-height: 1.5;
   @media (min-width: 996px) {
     grid-area: 3 / 2 / 3 / 2;
     margin-top: 0;
-    margin-left: 35%;
+    margin-left: 0%;
   }
-}
-
-#previous,
-#next {
-  margin: 13%;
-  background-color: var(--color4-);
-  border-color: transparent;
-  border-radius: 5px;
-  width: 75px;
-  height: 22px;
-  color: white;
-  margin-top: 20%;
-  @media (min-width: 996px) {
-    display: none;
-  }
-}
-
-#previous {
-  grid-area: 5 / 1 / 6 / 2;
-  margin-left: 30%;
-}
-
-#next {
-  grid-area: 5 / 3 / 6 / 4;
-  margin-left: 0%;
 }

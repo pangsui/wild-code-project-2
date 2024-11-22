@@ -50,12 +50,6 @@ function CardDev({ selectedHero }: { selectedHero: Hero }) {
             <p>Power : {selectedHero?.powerstats?.power}</p>
             <p>Combat : {selectedHero?.powerstats?.combat}</p>
           </figcaption>
-          <button id={styles.previous} type="button">
-            Previous
-          </button>
-          <button id={styles.next} type="button">
-            Next
-          </button>
         </figure>
       )}
       {selectedHero.length === 0 && (
