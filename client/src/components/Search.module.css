@@ -9,8 +9,8 @@
   margin-top: 1rem;
   @media (min-width: 996px) {
     flex-direction: row;
-    margin-left: 40rem;
-    margin-top: 0;
+    margin-left: 35rem;
+    margin-top: 0.3rem;
     width: 42vw;
     gap: 2rem;
     bottom: 3.9rem;
@@ -19,7 +19,7 @@
 
 .numberResults {
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 .searchInput {
@@ -93,7 +93,7 @@
   max-width: 75vw;
   overflow-y: scroll;
   @media screen and (min-width: 996px) {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
 
