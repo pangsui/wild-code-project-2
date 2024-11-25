@@ -1,14 +1,8 @@
 import styles from "./Search.module.css";
+import { useContextProvider } from "./context/ContextProvider";
 
-export default function Search({
-  numberResults,
-  input,
-  setInput,
-}: {
-  input: string;
-  setInput: (input: string) => void;
-  numberResults: number;
-}) {
+export default function Search() {
+  const { setInput, input, numOfResults } = useContextProvider();
   return (
     <section className={styles.form}>
       <form>
@@ -31,7 +25,7 @@ export default function Search({
           </svg>
         </div>
       </form>
-      <p className={styles.numberResults}>{numberResults} Results found</p>
+      <p className={styles.numberResults}>{numOfResults} Results found</p>
     </section>
   );
 }

@@ -24,7 +24,7 @@
 
 .childrenCard:hover {
   scale: 1.2;
-} 
+}
 
 .card img {
   border-top-left-radius: 5%;
@@ -32,7 +32,6 @@
   width: 100%;
   height: auto;
 }
-
 
 .card h2 {
   font-size: small;

@@ -6,7 +6,11 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.logoContent}>
         <NavLink to="/">
-          <img src="../src/assets/logo/logo3.png" alt="Logo" className={styles.headerLogo} />
+          <img
+            src="../src/assets/logo/logo3.png"
+            alt="Logo"
+            className={styles.headerLogo}
+          />
         </NavLink>
         <NavLink to="/">
           {" "}
