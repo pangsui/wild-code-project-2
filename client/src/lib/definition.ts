@@ -38,3 +38,26 @@ export type Urls = {
   html5: string;
   css3: string;
 };
+export type ContextType = {
+  data: Hero[];
+  input: string;
+  setInput: (value: string) => void;
+  currentData: Hero[];
+  setData: (value: Hero[]) => void;
+  isLoading: boolean;
+  setIsLoading: (value: boolean) => void;
+  error: string;
+  setError: (value: string) => void;
+  page: number;
+  setPage: (value: number) => void;
+  selectedHero: Hero | null;
+  setSelectedHero: (value: Hero | null) => void;
+  filteredHeroes: Hero[];
+  numPage: number;
+  numOfResults: number;
+  favourites: Hero[];
+  handleFavorite: () => void;
+  isClose: boolean;
+  handleClose: () => void;
+  setIsClose: (value: boolean) => void;
+};

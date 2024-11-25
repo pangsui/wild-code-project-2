@@ -2,16 +2,16 @@ import type { Hero } from "../lib/definition";
 import styles from "./CardContent.module.css";
 
 export default function CardContent({
-  data,
+  singleHero,
   handleShowDetails,
 }: {
-  data: Hero;
+  singleHero: Hero;
   handleShowDetails: (id: number) => void;
 }) {
   return (
     <div className={styles.card}>
-      <img width={50} src={data.images.lg} alt={data.name} />
-      <h2>{data.name}</h2>
+      <img width={50} src={singleHero.images.lg} alt={singleHero.name} />
+      <h2>{singleHero.name}</h2>
       <button className={styles.star} type="button">
         <svg
           aria-hidden="true"
@@ -27,7 +27,7 @@ export default function CardContent({
       <button
         className={styles.show}
         type="button"
-        onClick={() => handleShowDetails(data.id)}
+        onClick={() => handleShowDetails(singleHero.id)}
       >
         show
       </button>

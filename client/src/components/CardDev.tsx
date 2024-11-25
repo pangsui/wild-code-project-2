@@ -1,33 +1,41 @@
-import type { Hero } from "../lib/definition";
+import { useState } from "react";
 import styles from "./CardDev.module.css";
+import StarRating from "./StarRating";
+import { useContextProvider } from "./context/ContextProvider";
 
-function CardDev({ selectedHero }: { selectedHero: Hero }) {
+function CardDev() {
+  const { selectedHero, handleFavorite, handleClose, isClose } =
+    useContextProvider();
+  // state to get rating from star component
+  const [rating, setRating] = useState(0);
+  const buttonStyle = {
+    border: "none",
+    cursor: "pointer",
+    padding: "0.5rem 1rem",
+    borderRadius: "10px",
+    backgroundColor: "gold",
+    color: "black",
+    fontSize: "1.3rem",
+  };
+
   return (
     <div className={styles.cardcontener}>
-      {selectedHero.length !== 0 && (
+      {selectedHero?.length !== 0 && isClose && (
         <figure className={styles.card}>
           <img
             id={styles.heropicture}
-            alt={selectedHero.name}
+            alt={selectedHero?.name}
             src={selectedHero?.images?.lg}
           />
-          <button id={styles.star1} type="button">
-            <svg
-              aria-hidden="true"
-              width="100"
-              height="100"
-              viewBox="0 0 24 24"
-              fill="gold"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
-            </svg>
-          </button>
-          <button
+          <StarRating
+            maxRating={10}
+            onSetRating={(rating: number) => setRating(rating)}
+          />
 
+          <button
             className={styles.cardbutton}
             type="button"
-            aria-label="Fermer cette carte"
+            onClick={() => handleClose()}
           >
             <i className="fa-solid fa-xmark" />
           </button>
@@ -50,9 +58,18 @@ function CardDev({ selectedHero }: { selectedHero: Hero }) {
             <p>Power : {selectedHero?.powerstats?.power}</p>
             <p>Combat : {selectedHero?.powerstats?.combat}</p>
           </figcaption>
+          {rating > 0 && (
+            <button
+              style={buttonStyle}
+              type="button"
+              onClick={() => handleFavorite()}
+            >
+              Add to favourite
+            </button>
+          )}
         </figure>
       )}
-      {selectedHero.length === 0 && (
+      {selectedHero?.length === 0 && (
         <p className="NoSuperHero">
           Start by searching for a superhero or by clicking on any superhero
           from the list on the left. Enjoy exploring 😇!

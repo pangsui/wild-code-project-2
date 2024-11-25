@@ -1,25 +1,37 @@
-import type { Hero } from "../lib/definition";
+import { useEffect } from "react";
 import CardContent from "./CardContent";
+import { useContextProvider } from "./context/ContextProvider";
 
-function Card({
-  data,
-  setSelectedHero,
-}: {
-  data: Hero[];
-  setSelectedHero: (hero: Hero) => void;
-}) {
+function Card() {
+  const { currentData, selectedHero, setSelectedHero, isClose, setIsClose } =
+    useContextProvider();
+
   function handleShowDetails(heroID: number) {
-    const heroShow = data.find((hero) => hero.id === heroID);
+    const heroShow = currentData.find((hero) => hero.id === heroID);
     if (heroShow) {
       setSelectedHero(heroShow);
+      setIsClose(!isClose);
     }
   }
+
+  useEffect(() => {
+    if (currentData.length > 0) {
+      const heroShow = currentData.find((hero) => hero.id === selectedHero?.id);
+      if (heroShow) {
+        document.title = `DevRap | ${heroShow.name}`;
+      }
+    }
+    return () => {
+      document.title = "DevRap";
+    };
+  }, [currentData, selectedHero]);
+
   return (
     <section>
-      {data.map((hero) => (
+      {currentData.map((hero) => (
         <CardContent
           key={hero.id}
-          data={hero}
+          singleHero={hero}
           handleShowDetails={handleShowDetails}
         />
       ))}
