@@ -56,24 +56,36 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
   const [isClose, setIsClose] = useState(true);
   const handleClose = () => {
+    setSelectedHero(null);
     setIsClose(!isClose);
   };
 
   useEffect(() => {
+    // abort fetch request with browser's built-in AbortController
+    const controller = new AbortController();
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`${BASE_URL}${query}`);
+        setError("");
+        const response = await fetch(`${BASE_URL}${query}`, {
+          signal: controller.signal,
+        });
+
         if (!response.ok)
           throw new Error("something went wrong! could not fetch data😖");
         const heroes = await response.json();
 
         setData(heroes);
+        setError("");
 
         setIsLoading(false);
       } catch (err) {
         console.error((err as Error).message);
-        setError((err as Error).message);
+        if ((err as Error).name !== "AbortError") {
+          setError((err as Error).message);
+        }
+      } finally {
+        setIsLoading(false);
       }
     };
     if (input.length < 1) {
@@ -82,13 +94,16 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
     }
     fetchData();
     setPage(1);
+    return () => {
+      controller.abort();
+    };
   }, [input]);
 
   const resultsPerPage = 8;
-  const numPage = Math.ceil(data.length / resultsPerPage);
   const start = (page - 1) * resultsPerPage;
   const end = page * resultsPerPage;
   const currentData = filteredHeroes.slice(start, end);
+  const numPage = Math.ceil(filteredHeroes.length / resultsPerPage);
 
   return (
     <ContextHero.Provider
