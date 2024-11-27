@@ -17,8 +17,6 @@ function Footer() {
             src="../src/assets/logo/logo3.png"
             alt="logo"
           />
-        </div>
-        <div className={styles.firstLineFooter}>
           <p>© 2024 DevRAP All rights reserved.</p>
         </div>
         <div className={styles.collaborateurs}>
