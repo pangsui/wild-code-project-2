@@ -23,6 +23,10 @@ const ContextHero = createContext<ContextType>({
   isClose: true,
   setIsClose: () => {},
   handleClose: () => {},
+  handleClick: () => {},
+  isFavorite: true,
+  setIsFavorite: () => {},
+  setFavourites: () => {},
 });
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
@@ -32,10 +36,8 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
   const [selectedHero, setSelectedHero] = useState<Hero | null>(null);
   const [input, setInput] = useState("");
   const [page, setPage] = useState(1);
-
   const BASE_URL = "https://akabab.github.io/superhero-api/api/";
   const query = "all.json";
-
   const filteredHeroes = data.filter((hero) => {
     const publisher = hero.biography.publisher
       ?.toLowerCase()
@@ -44,13 +46,22 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
     return publisher || allSearch;
   });
+
   // Adding favorite heros to favorites page
   const [favourites, setFavourites] = useState<Hero[]>([]);
   function handleFavorite() {
     if (selectedHero) {
-      setFavourites([...(favourites || []), selectedHero]);
+      const exist = favourites.some((hero) => hero.id === selectedHero.id);
+      if (!exist) {
+        setFavourites([...(favourites || []), selectedHero]);
+      }
     }
   }
+
+  const [isFavorite, setIsFavorite] = useState(false);
+  const handleClick = () => {
+    setIsFavorite(!isFavorite);
+  };
 
   // closing and opening the larger card
 
@@ -74,8 +85,8 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
         if (!response.ok)
           throw new Error("something went wrong! could not fetch data😖");
         const heroes = await response.json();
-
         setData(heroes);
+
         setError("");
 
         setIsLoading(false);
@@ -129,12 +140,17 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
         isClose,
         handleClose,
         setIsClose,
+        handleClick,
+        isFavorite,
+        setIsFavorite,
+        setFavourites,
       }}
     >
       {children}
     </ContextHero.Provider>
   );
 }
+
 // encapsulating the ContextProvider component in a function
 function useContextProvider() {
   const context = useContext(ContextHero);
