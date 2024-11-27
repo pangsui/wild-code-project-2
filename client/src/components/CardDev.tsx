@@ -1,9 +1,11 @@
 import styles from "./CardDev.module.css";
+
 import { useContextProvider } from "./context/ContextProvider";
 
 function CardDev() {
   const { selectedHero, handleFavorite, handleClose, isClose } =
     useContextProvider();
+
 
   return (
     <div className={styles.cardcontener}>
@@ -14,11 +16,13 @@ function CardDev() {
             alt={selectedHero?.name}
             src={selectedHero?.images?.lg}
           />
+
           <button
             className={styles.star1}
             type="button"
             onClick={() => handleFavorite()}
           >
+
             <svg
               aria-hidden="true"
               width="100"
@@ -30,7 +34,6 @@ function CardDev() {
               <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
             </svg>
           </button>
-
           <button
             className={styles.cardbutton}
             type="button"

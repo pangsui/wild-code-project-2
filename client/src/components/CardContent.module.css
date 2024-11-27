@@ -7,7 +7,9 @@
   box-shadow: 5px 5px 5px black;
   margin-bottom: 0.5rem;
 }
-
+.colorChange {
+  background-color: #400609;
+}
 .cardSection {
   background-color: white;
   padding: 0.1rem 1.4rem;

@@ -5,14 +5,20 @@ import { useContextProvider } from "./context/ContextProvider";
 export default function CardContent({
   singleHero,
   handleShowDetails,
+  isSelect,
 }: {
   singleHero: Hero;
+  isSelect: boolean;
   handleShowDetails: (id: number) => void;
 }) {
   const { handleFavorite, isFavorite } = useContextProvider();
 
   return (
-    <div className={styles.card}>
+    <div
+      className={
+        isSelect ? `${styles.card} ${styles.colorChange}` : styles.card
+      }
+    >
       <img width={50} src={singleHero.images.lg} alt={singleHero.name} />
       <h2>{singleHero.name}</h2>
       <button className={styles.star} type="button" onClick={handleFavorite}>
@@ -43,7 +49,9 @@ export default function CardContent({
       <button
         className={styles.show}
         type="button"
-        onClick={() => handleShowDetails(singleHero.id)}
+        onClick={() => {
+          handleShowDetails(singleHero.id);
+        }}
       >
         show
       </button>
