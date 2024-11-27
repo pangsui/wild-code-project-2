@@ -33,6 +33,7 @@ function Card() {
           key={hero.id}
           singleHero={hero}
           handleShowDetails={handleShowDetails}
+          isSelect={selectedHero?.id === hero.id}
         />
       ))}
     </section>

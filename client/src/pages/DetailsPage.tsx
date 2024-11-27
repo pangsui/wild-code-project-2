@@ -17,7 +17,9 @@ export default function DetailsPage() {
     selectedHero,
   } = useContextProvider();
   function handleNext() {
-    if (page < numPage) setPage(page + 1);
+    if (page < numPage) {
+      setPage(page + 1);
+    }
   }
 
   function handlePrev() {
@@ -30,12 +32,12 @@ export default function DetailsPage() {
       </header>
       <main className="container">
         <div className="leftSection">
+          {error && <ErrorMessage message={error} name={""} />}
+          {isLoading && <Loading />}
           {filteredHeroes.length !== 0 ? (
             <>
-              {isLoading && <Loading />}
               {currentData && !error && !isLoading && <Card />}
-              {error && <ErrorMessage message={error} name={""} />}
-              {currentData?.length > 7 && (
+              {filteredHeroes?.length > 8 && (
                 <div className="btnLeft">
                   {page > 1 && (
                     <button
