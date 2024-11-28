@@ -52,12 +52,54 @@ function CardDev() {
           </figcaption>
           <h5>Powerstat</h5>
           <figcaption id={styles.powerstat}>
-            <p>Intelligence : {selectedHero?.powerstats?.intelligence}</p>
-            <p>Strength :{selectedHero?.powerstats?.strength} </p>
-            <p>Speed : {selectedHero?.powerstats?.speed}</p>
-            <p>Durability : {selectedHero?.powerstats?.durability}</p>
-            <p>Power : {selectedHero?.powerstats?.power}</p>
-            <p>Combat : {selectedHero?.powerstats?.combat}</p>
+            <div className="powerstats-container">
+              <img
+                src="../src//assets/logo/intelligence.png"
+                alt="un-cerveau"
+                width="60px"
+              />
+              <p>{selectedHero?.powerstats?.intelligence}</p>
+            </div>
+            <div className="powerstats-container">
+              <img
+                src="../src//assets/logo/force.png"
+                alt="biceps"
+                width="60px"
+              />
+              <p>{selectedHero?.powerstats?.strength} </p>
+            </div>
+            <div className="powerstats-container">
+              <img
+                src="../src//assets/logo/vitesse.png"
+                alt="vitesse"
+                width="60px"
+              />
+              <p>{selectedHero?.powerstats?.speed}</p>
+            </div>
+            <div className="powerstats-container">
+              <img
+                src="../src//assets/logo/endurance.png"
+                alt="pile"
+                width="60px"
+              />
+              <p>{selectedHero?.powerstats?.durability}</p>
+            </div>
+            <div className="powerstats-container">
+              <img
+                src="../src//assets/logo/puissance.png"
+                alt="eclair"
+                width="60px"
+              />
+              <p>{selectedHero?.powerstats?.power}</p>
+            </div>
+            <div className="powerstats-container">
+              <img
+                src="../src//assets/logo/combat.svg"
+                alt="fight"
+                width="58px"
+              />
+              <p>{selectedHero?.powerstats?.combat}</p>
+            </div>
           </figcaption>
         </figure>
       )}

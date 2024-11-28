@@ -3,6 +3,7 @@ import { useContextProvider } from "./context/ContextProvider";
 
 export default function Search() {
   const { setInput, input, numOfResults } = useContextProvider();
+
   return (
     <section className={styles.form}>
       <form>

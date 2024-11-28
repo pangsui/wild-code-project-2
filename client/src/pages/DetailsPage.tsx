@@ -72,8 +72,8 @@ export default function DetailsPage() {
               <CardDev />
             ) : (
               <p className="NoSuperHero">
-                Cliquez sur le bouton "Afficher" à gauche d’un super-héros pour
-                voir tous les détails. Bonne exploration !😇
+                Cliquez sur le bouton "Show" à gauche d’un super-héros pour voir
+                tous les détails. Bonne exploration !😇
               </p>
             )}
           </div>

@@ -80,12 +80,13 @@ body::before {
 
   .btnFirst,
   .btnSecond {
-    padding: 0.5rem 2rem;
-    margin-top: 1em;
-    background: none;
-    font-size: 1rem;
+    font-size: 12rem;
+    width: 250px;
     border: none;
-    scale: 3;
+    scale: 0.4;
     color: white;
+    background: var(--color4-);
+    border-radius: 100%;
+    margin-top: -5%;
   }
 }
