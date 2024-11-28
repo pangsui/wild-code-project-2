@@ -1,5 +1,5 @@
-import styles from "./AllHeroesPages.module.css";
 import { useContextProvider } from "../components/context/ContextProvider";
+import styles from "./AllHeroesPages.module.css";
 
 export default function AllHeroesPage() {
   const { favourites, setFavourites } = useContextProvider();
