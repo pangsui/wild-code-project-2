@@ -18,7 +18,6 @@ export default function CardContent({
     >
       <img width={50} src={singleHero.images.lg} alt={singleHero.name} />
       <h2>{singleHero.name}</h2>
-
       <button
         className={styles.show}
         type="button"

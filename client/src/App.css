@@ -53,11 +53,13 @@ body::before {
     grid-template-columns: 2fr 4fr;
   }
   .NoSuperHero {
-    font-size: 18px;
+    font-size: 25px;
     position: relative;
     bottom: 5rem;
-
     text-align: center;
+    @media (max-width: 996px) {
+      font-size: 18px;
+    }
   }
   .heroSearch {
     font-size: 18px;

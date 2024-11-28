@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ErrorMessage from "../components/ErrorMessage";
 import Loading from "../components/Loading";
+import { useContextProvider } from "../components/context/ContextProvider";
 import type { Hero } from "../lib/definition";
 import styles from "./AllHeroesPages.module.css";
 
@@ -8,6 +9,9 @@ export default function AllHeroesPage() {
   const [data, setData] = useState<Hero[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const { favourites, setFavourites } = useContextProvider();
+
   const BASE_URL = "https://akabab.github.io/superhero-api/api/";
   const query = "all.json";
   useEffect(() => {
@@ -29,6 +33,14 @@ export default function AllHeroesPage() {
     };
     fetchData();
   }, []);
+
+  function addTofavourites(id: number) {
+    const hero = data.find((hero) => hero.id === id);
+    if (!hero) return;
+    const filteredHero = favourites.filter((hero) => hero.id !== id);
+    setFavourites([...filteredHero, hero]);
+  }
+
   return (
     <section className={styles.card}>
       {isLoading && <Loading />}
@@ -38,7 +50,11 @@ export default function AllHeroesPage() {
           <div className={styles.childrenCard} key={data.id}>
             <img width={50} src={data.images.lg} alt={data.name} />
             <h2>{data.name}</h2>
-            <button className={styles.star} type="button">
+            <button
+              className={styles.star}
+              type="button"
+              onClick={() => addTofavourites(data.id)}
+            >
               <svg
                 aria-hidden="true"
                 width="100"

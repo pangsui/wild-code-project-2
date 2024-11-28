@@ -3,7 +3,7 @@ import styles from "./CardDev.module.css";
 import { useContextProvider } from "./context/ContextProvider";
 
 function CardDev() {
-  const { selectedHero, handleFavorite, handleClose, isClose } =
+  const { selectedHero, handleClose, isClose, handleFavorite } =
     useContextProvider();
 
   return (
@@ -15,7 +15,6 @@ function CardDev() {
             alt={selectedHero?.name}
             src={selectedHero?.images?.lg}
           />
-
           <button
             className={styles.star1}
             type="button"
@@ -35,7 +34,9 @@ function CardDev() {
           <button
             className={styles.cardbutton}
             type="button"
-            onClick={() => handleClose()}
+            onClick={() => {
+              handleClose();
+            }}
           >
             <i className="fa-solid fa-xmark" />
           </button>

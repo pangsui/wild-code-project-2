@@ -5,13 +5,8 @@ export default function AllHeroesPage() {
   const { favourites, setFavourites } = useContextProvider();
 
   const handleRemove = (id: number) => {
-    const heroRemaining = [];
-    for (const hero of favourites) {
-      if (hero.id !== id) {
-        heroRemaining.push(hero);
-      }
-    }
-    setFavourites(heroRemaining);
+    const filteredHero = favourites.filter((hero) => hero.id !== id);
+    setFavourites(filteredHero);
   };
 
   return (
