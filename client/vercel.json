@@ -5,4 +5,9 @@
       "destination": "/index.html"
     }
   ]
+  "build": {
+    "env": {
+      "GO_VERSION": "1.19.5"
+    }
+  }
 }
