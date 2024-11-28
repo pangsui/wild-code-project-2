@@ -23,6 +23,7 @@ const ContextHero = createContext<ContextType>({
   isClose: true,
   setIsClose: () => {},
   handleClose: () => {},
+  setFavourites: () => {},
 });
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
@@ -44,16 +45,29 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
     return publisher || allSearch;
   });
+
+  const [favourites, setFavourites] = useState<Hero[]>(() => {
+    // Initialize favourites from localStorage
+    const storedFavourites = localStorage.getItem("favourites");
+    return storedFavourites ? JSON.parse(storedFavourites) : [];
+  });
+
+  // Save favourites to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+  }, [favourites]);
+
   // Adding favorite heros to favorites page
-  const [favourites, setFavourites] = useState<Hero[]>([]);
   function handleFavorite() {
     if (selectedHero) {
-      setFavourites([...(favourites || []), selectedHero]);
+      const exist = favourites.some((hero) => hero.id === selectedHero.id);
+      if (!exist) {
+        setFavourites([...(favourites || []), selectedHero]);
+      }
     }
   }
 
   // closing and opening the larger card
-
   const [isClose, setIsClose] = useState(true);
   const handleClose = () => {
     setSelectedHero(null);
@@ -129,6 +143,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
         isClose,
         handleClose,
         setIsClose,
+        setFavourites,
       }}
     >
       {children}

@@ -9,9 +9,9 @@
   margin-top: 1rem;
   @media (min-width: 996px) {
     flex-direction: row;
-    margin-left: 35rem;
+    margin-left: 30rem;
     margin-top: 0.3rem;
-    width: 42vw;
+    width: 40vw;
     gap: 2rem;
     bottom: 3.9rem;
   }
@@ -24,6 +24,9 @@
   margin-bottom: 1rem;
   @media screen and (min-width: 996px) {
     margin-bottom: 0;
+    font-size: 23px;
+    position: relative;
+    left: 1rem;
   }
 }
 .searchInput {

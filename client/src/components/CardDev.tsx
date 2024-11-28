@@ -3,7 +3,8 @@ import styles from "./CardDev.module.css";
 import { useContextProvider } from "./context/ContextProvider";
 
 function CardDev() {
-  const { selectedHero, handleClose, isClose } = useContextProvider();
+  const { selectedHero, handleClose, isClose, handleFavorite } =
+    useContextProvider();
 
   return (
     <div className={styles.cardcontener}>
@@ -14,7 +15,11 @@ function CardDev() {
             alt={selectedHero?.name}
             src={selectedHero?.images?.lg}
           />
-          <button className={styles.star1} type="button">
+          <button
+            className={styles.star1}
+            type="button"
+            onClick={() => handleFavorite()}
+          >
             <svg
               aria-hidden="true"
               width="100"
@@ -29,7 +34,9 @@ function CardDev() {
           <button
             className={styles.cardbutton}
             type="button"
-            onClick={() => handleClose()}
+            onClick={() => {
+              handleClose();
+            }}
           >
             <i className="fa-solid fa-xmark" />
           </button>

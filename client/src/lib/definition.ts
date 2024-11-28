@@ -60,4 +60,5 @@ export type ContextType = {
   isClose: boolean;
   handleClose: () => void;
   setIsClose: (value: boolean) => void;
+  setFavourites: (value: Hero[]) => void;
 };
