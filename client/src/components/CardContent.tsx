@@ -11,6 +11,7 @@ export default function CardContent({
   isSelect: boolean;
   handleShowDetails: (id: number) => void;
 }) {
+
   const { data, favourites, setFavourites } = useContextProvider();
 
   function addTofavourites(id: number) {
@@ -20,6 +21,7 @@ export default function CardContent({
     setFavourites([...filteredHero, hero]);
   }
 
+ 
   return (
     <div
       className={
@@ -28,6 +30,7 @@ export default function CardContent({
     >
       <img width={50} src={singleHero.images.lg} alt={singleHero.name} />
       <h2>{singleHero.name}</h2>
+
       <button
         className={styles.star}
         type="button"
@@ -43,6 +46,7 @@ export default function CardContent({
         >
           <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
         </svg>
+ 
       </button>
       <button
         className={styles.show}
