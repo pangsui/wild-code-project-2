@@ -1,6 +1,5 @@
 import type { Hero } from "../lib/definition";
 import styles from "./CardContent.module.css";
-import { useContextProvider } from "./context/ContextProvider";
 
 export default function CardContent({
   singleHero,
@@ -11,7 +10,6 @@ export default function CardContent({
   isSelect: boolean;
   handleShowDetails: (id: number) => void;
 }) {
-
   const { data, favourites, setFavourites } = useContextProvider();
 
   function addTofavourites(id: number) {
@@ -21,7 +19,6 @@ export default function CardContent({
     setFavourites([...filteredHero, hero]);
   }
 
- 
   return (
     <div
       className={
@@ -48,6 +45,7 @@ export default function CardContent({
         </svg>
  
       </button>
+
       <button
         className={styles.show}
         type="button"

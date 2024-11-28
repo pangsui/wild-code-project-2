@@ -38,6 +38,7 @@
   max-height: 20vh;
   @media screen and (min-width: 996px) {
     justify-content: left;
+    margin-top: 1.4rem;
   }
 }
 
@@ -90,6 +91,7 @@
     font-size: 1em;
     padding: 0.5rem;
     position: unset;
+    margin-top: 1rem;
   }
 }
 
